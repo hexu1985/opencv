@@ -3,6 +3,12 @@
 #
 # ----------------------------------------------------------------------------
 
+if (HISI3519A)
+  message(STATUS "compile libpng for HISI3519A")
+  set(ARM 1)
+  set(ENABLE_NEON 1)
+endif()
+
 if(ENABLE_NEON)
   project(${PNG_LIBRARY} C ASM)
 else()

@@ -552,6 +552,11 @@ include(cmake/OpenCVInstallLayout.cmake)
 ocv_update(OPENCV_CONFIG_FILE_INCLUDE_DIR "${CMAKE_BINARY_DIR}/" CACHE PATH "Where to create the platform-dependant cvconfig.h")
 ocv_include_directories(${OPENCV_CONFIG_FILE_INCLUDE_DIR})
 
+if (HISI3519A)
+  message(STATUS "compile for HISI3519A: ocv_include_directories(./3rdparty/zlib)")
+  ocv_include_directories(./3rdparty/zlib)
+endif()
+
 # ----------------------------------------------------------------------------
 #  Path for additional modules
 # ----------------------------------------------------------------------------
